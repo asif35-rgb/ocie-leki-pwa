@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const register = await navigator.serviceWorker.register('./service-worker.js');
                 console.log('Service Worker Registered');
 
-                if (PUBLIC_VAPID_KEY && PUBLIC_VAPID_KEY !== 'PASTE_YOUR_PUBLIC_KEY_HERE') {
+                if (PUBLIC_VAPID_KEY && PUBLIC_VAPID_KEY !== 'BJl4IxIY4isYplUfX83YNfyPPzQBom0lVxgcW_bIg2q58Gry5ZHQaCRfl3DW8g7VADl3ivJxwmy8u8fyz2P4v3c') {
                     subscribeUserToPush(register);
                 }
             } catch (err) {
