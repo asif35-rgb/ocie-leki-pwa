@@ -3,5 +3,8 @@
   functions = "netlify/functions"
 [functions]
   node_bundler = "esbuild"
-[[functions.scheduled-check]]
-  schedule = "* * * * *"  # Run every minute
+[functions.scheduled-check]
+    external_node_modules = [
+      "module-one",
+      "module-two"
+    ]
