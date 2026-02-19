@@ -1,0 +1,21 @@
+{
+    "name": "Kocie Leki",
+    "short_name": "Leki",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#FFF2CC",
+    "theme_color": "#FFB7B2",
+    "description": "Słodka aplikacja do przypominania o lekach",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FFB7B2' d='M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z'/%3E%3Cpath fill='%23FFF' d='M160 160h64v192h-64zm128 0h64v192h-64z'/%3E%3C/svg%3E",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FFB7B2' d='M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z'/%3E%3Cpath fill='%23FFF' d='M160 160h64v192h-64zm128 0h64v192h-64z'/%3E%3C/svg%3E",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ]
+}

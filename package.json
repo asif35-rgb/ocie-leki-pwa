@@ -1,0 +1,14 @@
+{
+  "name": "kocie-leki-pwa",
+  "version": "1.0.0",
+  "description": "Kocie Leki PWA z Backendem Netlify",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "@netlify/functions": "^2.6.0",
+    "web-push": "^3.6.7"
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kocie Leki 🐱</title>
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFB7B2">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header>
+            <h1>Kocie Leki</h1>
+            <p>Pamiętaj o zdrówku! Miau!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            
+            <!-- Sleeping Cat (Empty State / Generic Illustration) -->
+            <div id="cat-illustration" class="cat-container">
+                <!-- Inline SVG: Sleeping Cat -->
+                <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="110" r="70" fill="#FFF2CC" /> <!-- Body -->
+                    <circle cx="100" cy="110" r="60" fill="#FFE0B2" opacity="0.5" />
+                    <path d="M60 70 L50 40 L90 60 Z" fill="#FFF2CC" /> <!-- Left Ear -->
+                    <path d="M140 70 L150 40 L110 60 Z" fill="#FFF2CC" /> <!-- Right Ear -->
+                    <ellipse cx="85" cy="100" rx="5" ry="2" fill="#555" /> <!-- Eye L -->
+                    <ellipse cx="115" cy="100" rx="5" ry="2" fill="#555" /> <!-- Eye R -->
+                    <circle cx="100" cy="110" r="3" fill="#FFAB91" /> <!-- Nose -->
+                    <path d="M90 120 Q100 130 110 120" stroke="#555" fill="none" stroke-width="2" /> <!-- Mouth -->
+                    <path d="M40 100 Q60 110 70 100" stroke="#888" fill="none" stroke-width="1" /> <!-- Whiskers L -->
+                    <path d="M160 100 Q140 110 130 100" stroke="#888" fill="none" stroke-width="1" /> <!-- Whiskers R -->
+                    <text x="140" y="50" font-family="Arial" font-size="20">Zzz...</text>
+                </svg>
+            </div>
+
+            <!-- Active Alert (Hidden by default) -->
+            <div id="alert-box" class="alert hidden">
+                <div class="alert-content">
+                    <!-- Meowing Cat SVG -->
+                    <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" fill="#FFCCBC" />
+                        <circle cx="35" cy="40" r="5" fill="#333" />
+                        <circle cx="65" cy="40" r="5" fill="#333" />
+                        <ellipse cx="50" cy="60" rx="10" ry="15" fill="#D32F2F" />
+                    </svg>
+                    <strong>Czas na leki! Miau!</strong>
+                    <button id="close-alert">Już biorę!</button>
+                </div>
+            </div>
+
+            <!-- Add Medication Form -->
+            <section class="card form-section">
+                <h2>Dodaj nowy lek</h2>
+                <form id="med-form">
+                    <div class="form-group">
+                        <label for="med-name">Nazwa leku</label>
+                        <input type="text" id="med-name" placeholder="np. Kocia Witaminka" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="med-quantity">Ilość w opakowaniu (sztuk)</label>
+                        <input type="number" id="med-quantity" placeholder="np. 20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="med-dose">Dawka (ile sztuk na raz)</label>
+                        <input type="number" step="0.5" id="med-dose" placeholder="np. 1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="med-time">Godzina</label>
+                        <input type="time" id="med-time" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Dodaj do listy 🐾</button>
+                </form>
+            </section>
+
+            <!-- Medication List -->
+            <section class="card list-section">
+                <h2>Twoje Leki</h2>
+                <ul id="med-list" class="medication-list">
+                    <!-- Items will be injected here via JS -->
+                    <li class="empty-list-msg">Brak leków na liście. Dodaj coś! 😸</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kocie Leki & Netlify</p>
+        </footer>
+
+        <!-- Notification Permission Request -->
+        <div id="notification-request" class="notification-banner hidden">
+            <p>Włącz powiadomienia, aby nie przegapić leków!</p>
+            <button id="enable-notifications">Włącz</button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+            .then(() => console.log('Service Worker Registered'));
+        }
+    </script>
+</body>
+</html>
