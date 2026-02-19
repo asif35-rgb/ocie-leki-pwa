@@ -14,8 +14,11 @@ exports.handler = async (event, context) => {
             return { statusCode: 400, body: 'Missing userId or medications' };
         }
 
-        const store = getStore({ name: 'kocie-leki-data', siteID: process.env.SITE_ID, token: process.env.NETLIFY_API_TOKEN });
-
+       const store = getStore({ 
+    name: 'kocie-leki-data', 
+    siteID: process.env.MY_SITE_ID, 
+    token: process.env.NETLIFY_API_TOKEN 
+});
         // Store user data
         // Key: userId
         // Value: JSON string of meds + subscription
