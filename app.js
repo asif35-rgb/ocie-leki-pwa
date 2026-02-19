@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Netlify Config
-    const PUBLIC_VAPID_KEY = 'PASTE_YOUR_PUBLIC_KEY_HERE'; // Replace with key from Netlify Env if needed on frontend?
+    const PUBLIC_VAPID_KEY = 'BJl4IxIY4isYplUfX83YNfyPPzQBom0lVxgcW_bIg2q58Gry5ZHQaCRfl3DW8g7VADl3ivJxwmy8u8fyz2P4v3c'; // Replace with key from Netlify Env if needed on frontend?
     // Actually, usually we fetch public key from backend to avoid hardcoding.
     // But for this simple flow, hardcoding or pasting is fine.
 
