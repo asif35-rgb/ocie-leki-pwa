@@ -1,7 +1,7 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
 [functions]
-
-    [functions.scheduled-check]
-    external_node_modules = [
-      "module-one",
-      "module-two"
-    ]
+  node_bundler = "esbuild"
+[[functions.scheduled-check]]
+  schedule = "* * * * *"  # Run every minute
