@@ -18,7 +18,11 @@ exports.handler = async (event, context) => {
     }
 
     try {
-        const store = getStore('kocie-leki-data');
+         const store = getStore({ 
+    name: 'kocie-leki-data', 
+    siteID: process.env.MY_SITE_ID, 
+    token: process.env.NETLIFY_API_TOKEN 
+});
         const { blobs } = await store.list(); // List all user keys
 
         const now = new Date();
