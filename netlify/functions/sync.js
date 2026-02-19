@@ -14,8 +14,7 @@ exports.handler = async (event, context) => {
             return { statusCode: 400, body: 'Missing userId or medications' };
         }
 
-        // Connect to Netlify Blobs 'kocie-leki-data'
-        const store = getStore('kocie-leki-data');
+        const store = getStore({ name: 'kocie-leki-data', siteID: process.env.SITE_ID, token: process.env.NETLIFY_API_TOKEN });
 
         // Store user data
         // Key: userId
